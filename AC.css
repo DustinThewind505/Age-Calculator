@@ -1,0 +1,19 @@
+html {
+	text-align: center;
+}
+
+li {
+	list-style: none;
+	font-family: 'Gloria Hallelujah', sans;
+}
+
+h1 {
+	font-size: 3em;
+	font-family: 'Michroma', sans;
+	margin: ;
+}
+
+.reaperPic {
+	width: 2fr;
+	height: 3fr;
+}
