@@ -1,0 +1,23 @@
+{
+  "name": "Age-Calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DustinThewind505/Age-Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DustinThewind505/Age-Calculator/issues"
+  },
+  "homepage": "https://github.com/DustinThewind505/Age-Calculator#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
