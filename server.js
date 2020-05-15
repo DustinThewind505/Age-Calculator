@@ -28,7 +28,14 @@ let hobbits = [
 let ids = 4
 
 server.get('/hobbits', (req, res) => {
-    res.status(200).json(hobbits)
+    const sortField = req.query.sortby || 'id';
+    console.log(req.query)
+
+    const response = hobbits.sort(
+        (a, b) => (a[sortField] < b[sortField] ? -1 : 1)
+      );
+    
+      res.status(200).json(response);
 })
 
 server.post('/hobbits', (req, res) => {
@@ -66,7 +73,7 @@ server.delete('/hobbits/:id', (req, res) => {
 
 server.use('/users', userRoutes)
 
-server.listen(8000, () => console.log('\n\t\t\t\t\t\t\t\t** API running on port 8000 **\n'))
+server.listen(8000, () => console.log('\n\t\t\t\t\t\t\t\t*** API running on port 8000 ***\n'))
 
 
 
