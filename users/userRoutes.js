@@ -1,0 +1,18 @@
+const express = require('express');
+
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    res.status(200).send('hello from the /Get /users endpoint. ')
+})
+
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    res.status(200).send(`hello from the GET /users/${id} endpoint`)
+})
+
+router.post('/', (req, res) => {
+    res.status(200).send('hello from the POST /users endpoint');
+})
+
+module.exports = router;
