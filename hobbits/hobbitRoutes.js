@@ -25,7 +25,7 @@ let ids = 4
 
 router.get('/', (req, res) => {
     const sortField = req.query.sortby || 'id';
-    console.log(req.query)
+    // console.log(req.query)
 
     const response = hobbits.sort(
         (a, b) => (a[sortField] < b[sortField] ? -1 : 1)
