@@ -1,14 +1,14 @@
 const express = require('express');
 
-const hobbitsRouter = require('../hobbits/hobbitsRouter');
+const apiRoutes = require('./apiRoutes');
 
 const server = express();
 server.use(express.json());
 
-server.use('/hobbits', hobbitsRouter);
+server.use('/api', apiRoutes);
 
 server.get('/', (req, res) => {
-    res.status(200).json({message: 'Ello Poppet'})
+    res.send('<img src="http://3.bp.blogspot.com/-nY7RCflMJOk/TdVR-JHjEyI/AAAAAAAAAC8/D0tVTHeksow/s1600/Powerman_5000_umvd01.jpg"/>');
 });
 
 module.exports = server;
