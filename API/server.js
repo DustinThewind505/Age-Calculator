@@ -25,6 +25,12 @@ server.get('/ello', (req, res) => {
     res.status(200).json(hobbits)
 })
 
+server.get('/ello/:id', (req, res) => {
+const hobbit = hobbits.find(h => h.id == req.params.id)
+
+    res.status(200).json(hobbit)
+})
+
 server.post('/ello', (req, res) => {
     const hobbit = req.body;
 
@@ -35,11 +41,19 @@ server.post('/ello', (req, res) => {
     res.status(201).json(hobbits)
 })
 
-server.put('/ello', (req, res) => {
-    res.status(201).json({message: "PUT Hobbits"})
+server.put('/ello/:id', (req, res) => {
+    const hobbit = hobbits.find(h => h.id == req.params.id)
+
+    if(!hobbit){
+        res.status(404).json({message: "There is no Hobbit by that id"})
+    } else {
+    Object.assign(hobbit, req.body);
+    res.status(200).json(hobbit)
+    }
 })
 
-server.delete('/ello', (req, res) => {
+server.delete('/ello/:id', (req, res) => {
+
     res.status(200).json({message: "DELETE"})
 })
 
