@@ -49,8 +49,14 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
+    const hobbit = hobbits.find(h => h.id == req.params.id);
 
-    res.status(200).json({message: "DELETE"})
+    if(!hobbit){
+        res.status(404).json({message: "Could not find Hobbit"})
+    } else {
+        hobbits = hobbits.filter(h => h.id != req.params.id);
+        res.status(200).json(hobbit);
+    };
 })
 
 
