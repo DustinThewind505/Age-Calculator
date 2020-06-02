@@ -1,4 +1,5 @@
 const express = require('express');
+const bcrypt = require('bcryptjs');
 
 const router = express.Router();
 
@@ -32,6 +33,10 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     const mutant = req.body;
+
+    const hash = bcrypt.hashSync(mutant.ability);
+
+    mutant.ability = hash;
 
     mutant.id = nextId++;
 

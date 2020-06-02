@@ -8,7 +8,7 @@ const server = express();
 server.use(express.json());
 server.use(morgan('dev'));
 server.use(logger);
-server.use(atTheGate);
+//server.use(atTheGate);
 
 server.use('/api', apiRoutes);
 
@@ -29,10 +29,10 @@ function logger(req, res, next){
     next();
 }
 
-function atTheGate(req, res, next){
-    console.log("At the gate about to be eaten");
-    next();
-}
+// function atTheGate(req, res, next){
+//     console.log("At the gate about to be eaten");
+//     next();
+// }
 
 function auth(req, res, next){
     if(req.url === '/mellon'){
