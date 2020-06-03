@@ -28,4 +28,24 @@ router.post('/register', (req, res) => {
     res.status(201).json(users)
 })
 
+router.post('/login', (req, res) => {
+    const dude = req.body
+    const user = users.find(u => u.name == dude.name);
+    dude.id = user.id;
+
+    console.log(user)
+    console.log(dude)
+
+    // res.status(200).json({ message: `Welcome ${user.name}` })
+    
+    if (user.password == dude.password) {
+        res.status(200).json({ message: `Welcome ${user.name}` })
+    } else {
+        res.status(404).json({ message: `Invalid credentials` })
+    }
+
+
+
+})
+
 module.exports = router;
