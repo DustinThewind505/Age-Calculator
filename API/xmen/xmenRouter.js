@@ -28,7 +28,11 @@ router.get('/', (req,res) => {
 
 router.get('/:id', (req, res) => {
     const mutant = xmen.find(x => x.id == req.params.id)
-    res.status(200).json(mutant);
+    if(mutant){
+        res.status(200).json(mutant);
+    } else {
+        res.status(404).json({message: "Could not find Mutant"})
+    }
 })
 
 router.post('/', (req, res) => {
