@@ -8,6 +8,9 @@ module.exports = {
       filename: './data/characters.db3'
     },
     useNullAsDefault: true,
-  },
+    migrations: {
+      directory: './data/migrations'
+    }
+  }
 
 };
